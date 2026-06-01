@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-gold: var(--theme-gold, #d4af37);
+  --color-gold-400: var(--theme-gold-light, #e5c158);
+  --color-navy-900: var(--theme-bg-medium, #0a0c14);
+  --color-navy-950: var(--theme-bg-dark, #040508);
+  --color-navy-955: var(--theme-bg-deep, #010102);
+  --color-text-sand: var(--theme-text, #e8e3dd);
+}
+
+/* Base custom resets and scroll styles */
+:root {
+  --theme-gold: #d4af37;
+  --theme-gold-light: #e5c158;
+  --theme-bg-medium: #0a0c14;
+  --theme-bg-dark: #040508;
+  --theme-bg-deep: #010102;
+  --theme-text: #e8e3dd;
+  --theme-text-muted: rgba(232, 227, 221, 0.6);
+  --theme-border-opacity: rgba(212, 175, 55, 0.12);
+  --theme-border-strong: rgba(212, 175, 55, 0.3);
+
+  --theme-bg-gradient: 
+    radial-gradient(circle at 10% 15%, rgba(212, 175, 55, 0.05) 0%, transparent 35%),
+    radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.035) 0%, transparent 45%),
+    radial-gradient(circle at 50% 45%, rgba(13, 148, 136, 0.015) 0%, transparent 60%);
+  --theme-glass-bg: rgba(10, 12, 20, 0.65);
+  --theme-glass-border: rgba(212, 175, 55, 0.12);
+  --theme-glass-panel-bg: rgba(8, 10, 16, 0.85);
+  --theme-glass-panel-border: rgba(212, 175, 55, 0.15);
+  --theme-glass-shadow: rgba(0, 0, 0, 0.5);
+  
+  --theme-scrollbar-track: rgba(4, 5, 8, 0.8);
+  --theme-scrollbar-thumb: rgba(212, 175, 55, 0.25);
+}
+
+/* Highland Mist & Pine Theme Override */
+html.theme-pine {
+  --theme-gold: #10B981;
+  --theme-gold-light: #34D399;
+  --theme-bg-medium: #0d221c;
+  --theme-bg-dark: #051410;
+  --theme-bg-deep: #020907;
+  --theme-text: #e2ece9;
+  --theme-text-muted: rgba(226, 236, 233, 0.6);
+  --theme-border-opacity: rgba(16, 185, 129, 0.15);
+  --theme-border-strong: rgba(16, 185, 129, 0.35);
+
+  --theme-bg-gradient: 
+    radial-gradient(circle at 10% 15%, rgba(16, 185, 129, 0.08) 0%, transparent 35%),
+    radial-gradient(circle at 85% 75%, rgba(52, 211, 153, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 50% 45%, rgba(6, 78, 59, 0.03) 0%, transparent 60%);
+  --theme-glass-bg: rgba(11, 26, 22, 0.75);
+  --theme-glass-border: rgba(16, 185, 129, 0.15);
+  --theme-glass-panel-bg: rgba(5, 18, 15, 0.9);
+  --theme-glass-panel-border: rgba(16, 185, 129, 0.2);
+  --theme-glass-shadow: rgba(0, 8, 5, 0.6);
+  
+  --theme-scrollbar-track: rgba(5, 20, 16, 0.8);
+  --theme-scrollbar-thumb: rgba(16, 185, 129, 0.3);
+}
+
+/* Sandalwood Classic Light Theme Override */
+html.theme-light {
+  --theme-gold: #a07812;
+  --theme-gold-light: #b88b20;
+  --theme-bg-medium: #f2ede4;
+  --theme-bg-dark: #faf8f5;
+  --theme-bg-deep: #eae4da;
+  --theme-text: #201b15;
+  --theme-text-muted: rgba(32, 27, 21, 0.65);
+  --theme-border-opacity: rgba(160, 120, 18, 0.18);
+  --theme-border-strong: rgba(160, 120, 18, 0.4);
+
+  --theme-bg-gradient: 
+    radial-gradient(circle at 10% 15%, rgba(160, 120, 18, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.03) 0%, transparent 45%);
+  --theme-glass-bg: rgba(242, 237, 228, 0.85);
+  --theme-glass-border: rgba(160, 120, 18, 0.18);
+  --theme-glass-panel-bg: rgba(250, 248, 245, 0.95);
+  --theme-glass-panel-border: rgba(160, 120, 18, 0.25);
+  --theme-glass-shadow: rgba(32, 27, 21, 0.08);
+  
+  --theme-scrollbar-track: rgba(242, 237, 228, 0.8);
+  --theme-scrollbar-thumb: rgba(160, 120, 18, 0.3);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--theme-bg-dark);
+  color: var(--theme-text);
+  transition: background-color 0.45s cubic-bezier(0.16, 1, 0.3, 1), color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--theme-text);
+  background-color: var(--theme-bg-dark);
+  background-image: var(--theme-bg-gradient);
+  background-attachment: fixed;
+  transition: background-color 0.45s cubic-bezier(0.16, 1, 0.3, 1), color 0.45s cubic-bezier(0.16, 1, 0.3, 1), background-image 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--theme-scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--theme-scrollbar-thumb);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-gold);
+}
+
+/* Sublime Glassmorphism overlay matching Design HTML */
+.glass {
+  background: var(--theme-glass-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--theme-glass-border);
+  box-shadow: 0 4px 30px var(--theme-glass-shadow);
+  transition: background-color 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel {
+  background: var(--theme-glass-panel-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--theme-glass-panel-border);
+  box-shadow: 0 8px 32px var(--theme-glass-shadow);
+  transition: background-color 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-hover:hover {
+  border-color: var(--theme-border-strong);
+  box-shadow: 0 12px 40px rgba(212, 175, 55, 0.05);
+  transform: translateY(-2px);
+}
+
+.gold-glow {
+  text-shadow: 0 0 20px rgba(var(--theme-gold), 0.4);
+}
+
+.gradient-overlay {
+  background: radial-gradient(circle at 70% 30%, rgba(6, 78, 59, 0.12) 0%, transparent 60%), radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.06) 0%, transparent 50%);
+}
+
+.letter-spacing-wide {
+  letter-spacing: 0.3em;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.serif {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+/* Animations declarations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

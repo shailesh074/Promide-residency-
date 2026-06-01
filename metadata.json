@@ -1,0 +1,6 @@
+{
+  "name": "Promide Grand",
+  "description": "Production-grade luxury hotel booking platform for Promide Grand in Karnataka, featuring a cinematic UI, full-stack Express backend, secure transactional bookings, and an AI chat concierge.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,94 @@
+{
+  "users": [
+    {
+      "id": "u-admin",
+      "name": "Promide Admin",
+      "email": "admin@promide.com",
+      "password": "42c419cc8728801747f02d25e709978201ca1152e2b06c2e268f6850d819e051",
+      "role": "admin",
+      "createdAt": "2026-06-01T20:44:50.230Z"
+    },
+    {
+      "id": "u-guest",
+      "name": "Prestige Guest",
+      "email": "user@promide.com",
+      "password": "7921e52bb5b6782b2fa58c2b03bd5cde5d5f7e431a6c7499e6f7eb2de3c98190",
+      "role": "user",
+      "createdAt": "2026-06-01T20:44:50.230Z"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "r-std",
+      "roomNumber": "101",
+      "roomType": "Standard",
+      "description": "A cozy, refined sanctuary offering ultimate modern comfort with high-end premium features.",
+      "images": [
+        "/src/assets/images/standard_room_coorg_1780347379550.png",
+        "https://images.unsplash.com/photo-1611891404938-302a60394f56?auto=format&fit=crop&q=80&w=1200"
+      ],
+      "price": 1,
+      "capacity": 2,
+      "availabilityStatus": "available"
+    },
+    {
+      "id": "r-dlx",
+      "roomNumber": "201",
+      "roomType": "Deluxe",
+      "description": "Spacious elegance featuring a private glass balcony with panoramic views of the Karnataka valleys.",
+      "images": [
+        "/src/assets/images/deluxe_room_coorg_1780347399409.png",
+        "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&q=80&w=1200"
+      ],
+      "price": 2,
+      "capacity": 3,
+      "availabilityStatus": "available"
+    },
+    {
+      "id": "r-suite",
+      "roomNumber": "301",
+      "roomType": "Luxury Suite",
+      "description": "Our crown jewel. Includes an expansive independent living area, integrated workspace, private hot tub, and personalized grand butler service.",
+      "images": [
+        "/src/assets/images/luxury_suite_coorg_1780347417114.png",
+        "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80&w=1200"
+      ],
+      "price": 3,
+      "capacity": 4,
+      "availabilityStatus": "available"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "b-seed-1",
+      "userId": "u-guest",
+      "roomId": "r-dlx",
+      "checkInDate": "2026-06-10",
+      "checkOutDate": "2026-06-12",
+      "totalAmount": 4,
+      "bookingStatus": "confirmed",
+      "paymentStatus": "completed",
+      "createdAt": "2026-06-01T20:44:50.230Z"
+    }
+  ],
+  "payments": [
+    {
+      "id": "p-seed-1",
+      "bookingId": "b-seed-1",
+      "paymentId": "pay_seed_9801_ok",
+      "amount": 4,
+      "paymentMethod": "UPI",
+      "paymentStatus": "completed",
+      "createdAt": "2026-06-01T20:44:50.230Z"
+    }
+  ],
+  "messages": [
+    {
+      "id": "m-seed-1",
+      "name": "Shailesh Hiremath",
+      "email": "shaileshhiremath074@gmail.com",
+      "message": "Hello, looking forward to booking the Luxury Suite next month. Could we arrange an early check-in?",
+      "createdAt": "2026-06-01T20:44:50.230Z"
+    }
+  ]
+}
